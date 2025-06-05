@@ -68,10 +68,13 @@ android {
 }
 
 dependencies {
+    implementation(libs.picasso)
     debugImplementation(compose.uiTooling)
     implementation(libs.androidx.material3.android)
     implementation(libs.protolite.well.known.types)
     implementation(libs.core.ktx)
     implementation(libs.koin.compose)
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
 }
 

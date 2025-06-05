@@ -37,6 +37,8 @@ kotlin {
             implementation("org.bouncycastle:bcprov-jdk15on:1.70")
 
             implementation("com.squareup.okio:okio:3.3.0")
+            implementation("com.squareup.picasso:picasso:2.8")
+
 
 
             // Coroutines
@@ -54,6 +56,8 @@ kotlin {
             implementation("org.bouncycastle:bcprov-jdk15on:1.70")
 
             implementation("com.squareup.okio:okio:3.3.0")
+            implementation("com.squareup.picasso:picasso:2.8")
+
 
 
             // Koin
