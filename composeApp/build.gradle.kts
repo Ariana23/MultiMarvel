@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.core.ktx)
     implementation(libs.koin.compose)
     implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("app.cash.sqldelight:android-driver:2.1.0")
 
 }
 

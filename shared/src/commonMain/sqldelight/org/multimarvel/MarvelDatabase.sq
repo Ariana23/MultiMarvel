@@ -1,0 +1,17 @@
+CREATE TABLE characters (
+    id INTEGER PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT,
+    thumbnail TEXT NOT NULL
+);
+
+SELECT_ALL:
+SELECT * FROM characters;
+
+INSERT_CHARACTER:
+INSERT INTO characters(id, name, description, thumbnail)
+VALUES (?, ?, ?, ?);
+
+DELETE_CHARACTER:
+DELETE FROM characters WHERE id = ?;
+

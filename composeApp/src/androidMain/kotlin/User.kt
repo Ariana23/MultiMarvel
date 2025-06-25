@@ -24,14 +24,11 @@ import androidx.compose.ui.platform.LocalContext
 
 import androidx.compose.ui.unit.dp
 
-
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
 @Composable
-fun CharacterListScreen() {
-    val viewModel: CharactersViewModel = viewModel()
+fun CharacterListScreen(viewModel: CharactersViewModel) {
     val characters by viewModel.characters.collectAsState()
 
     LaunchedEffect(Unit) {
@@ -41,8 +38,8 @@ fun CharacterListScreen() {
     LazyColumn {
         items(characters) { character ->
 
-            val imageUrl = character.thumbnail.path.replace("http://", "https://") + "/portrait_xlarge." + character.thumbnail.extension
-            Log.d("CharacterImage", "URL generada: $imageUrl")
+            val imageUrl = character.thumbnail.path.replace("http://", "https://") +
+                    "/portrait_xlarge." + character.thumbnail.extension
 
             Spacer(Modifier.height(3.dp))
             Column(
@@ -54,7 +51,6 @@ fun CharacterListScreen() {
                     text = "${character.name}: ${character.description}"
                 )
 
-
                 AsyncImage(
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(imageUrl)
@@ -62,7 +58,9 @@ fun CharacterListScreen() {
                         .error(R.drawable.meme)
                         .build(),
                     contentDescription = character.name,
-                    modifier = Modifier.fillMaxWidth().height(200.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(200.dp)
                 )
             }
         }
